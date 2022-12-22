@@ -11,6 +11,6 @@ RUN curl -L "https://github.com/docker/compose/releases/download/1.29.2/docker-c
 RUN chmod +x docker-compose
 
 COPY . .
-ENTRYPOINT ./docker-compose -f ./docker-compose.yml up
+ENTRYPOINT pwd && ls -lf && ./docker-compose -f ./docker-compose.yml up
 
 EXPOSE 3000
