@@ -5,8 +5,8 @@ services:
     image: public.ecr.aws/y7v2w8b2/redstone-cache-service:68ed6c1
     ports:
       - 3000:3000
-    depends_on:
-      - mongodb
+#     depends_on:
+#       - mongodb
     restart: "on-failure"
     environment:
       MONGO_DB_URL: "mongodb://mongodb:27017"
@@ -15,21 +15,21 @@ services:
       MOCK_DATA_SERVICE_ID_FOR_PACKAGES: "false"
       API_KEY_FOR_ACCESS_TO_ADMIN_ROUTES: "you-should-configure-your-own-key"
 
-  mongodb:
-    image: mongo:5.0
-    ports:
-      - 27017:27017
-    volumes:
-      - db-volume:/data/db
+#   mongodb:
+#     image: mongo:5.0
+#     ports:
+#       - 27017:27017
+#     volumes:
+#       - db-volume:/data/db
 
-  mongo-express:
-    image: mongo-express:1.0.0-alpha.4
-    ports:
-      - "8081:8081"
-    depends_on:
-      - mongodb
-    environment:
-      ME_CONFIG_MONGODB_URL: "mongodb://mongodb:27017"
+#   mongo-express:
+#     image: mongo-express:1.0.0-alpha.4
+#     ports:
+#       - "8081:8081"
+#     depends_on:
+#       - mongodb
+#     environment:
+#       ME_CONFIG_MONGODB_URL: "mongodb://mongodb:27017"
 
-volumes:
-  db-volume:
+# volumes:
+#   db-volume:
