@@ -14,6 +14,6 @@ RUN chmod +x docker-compose
 RUN curl -sSL https://get.docker.com/ | sh
 
 COPY . .
-ENTRYPOINT service docker start && ./docker-compose -f ./docker-compose.yml up
+ENTRYPOINT service docker start && service docker status && ./docker-compose -f ./docker-compose.yml up
 
 EXPOSE 3000
