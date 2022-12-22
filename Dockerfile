@@ -8,8 +8,8 @@ RUN apt-get upgrade -y
 RUN apt-get install -y python3
 RUN apt-get install -y python3-pip
 RUN apt-get install -y curl
-RUN curl -L "https://github.com/docker/compose/releases/download/1.29.2/docker-compose-$(uname -s)-$(uname -m)" -o bin/docker-compose
-RUN chmod +x bin/docker-compose
+RUN curl -L "https://github.com/docker/compose/releases/download/1.29.2/docker-compose-$(uname -s)-$(uname -m)" -o app/docker-compose
+RUN chmod +x app/docker-compose
 
 EXPOSE 3000
-ENTRYPOINT bin/docker-compose up
+ENTRYPOINT app/docker-compose up
