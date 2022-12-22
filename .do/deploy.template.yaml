@@ -1,8 +1,7 @@
 spec:
   name: cache-service
   services:
-  - build_command: chmod +x lightsail-setup.sh && ./lightsail-setup.sh
-    environment_slug: node-js
+  - dockerfile_path: Dockerfile
     git:
       branch: main
       repo_clone_url: https://github.com/Lukasz2891/redstone-cache-service-digitalocean.git
