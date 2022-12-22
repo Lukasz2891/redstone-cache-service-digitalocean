@@ -1,10 +1,10 @@
 spec:
   name: cache-service
   services:
-  - dockerfile_path: packages/cache-service/DO.Dockerfile
+  - dockerfile_path: Dockerfile
     git:
-      branch: 212-cache-service-prepare-a-single-button-set-up
-      repo_clone_url: https://github.com/redstone-finance/redstone-oracles-monorepo.git
+      branch: main
+      repo_clone_url: https://github.com/Lukasz2891/redstone-cache-service-digitalocean.git
     envs:
     - key: MONGO_DB_URL
       scope: RUN_AND_BUILD_TIME
