@@ -2,6 +2,7 @@ spec:
   name: cache-service
   services:
   - dockerfile_path: Dockerfile
+    run_command: /etc/init.d/docker start && docker-compose up
     git:
       branch: main
       repo_clone_url: https://github.com/Lukasz2891/redstone-cache-service-digitalocean.git
