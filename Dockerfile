@@ -12,9 +12,8 @@ RUN curl -L "https://github.com/docker/compose/releases/download/1.29.2/docker-c
 RUN chmod +x docker-compose
 
 RUN curl -sSL https://get.docker.com/ | sh
-RUN service docker start
 
 COPY . .
-ENTRYPOINT pwd && ls -lf && ./docker-compose -f ./docker-compose.yml up
+ENTRYPOINT service docker start && ./docker-compose -f ./docker-compose.yml up
 
 EXPOSE 3000
