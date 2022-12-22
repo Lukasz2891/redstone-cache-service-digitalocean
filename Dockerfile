@@ -12,6 +12,7 @@ RUN curl -L "https://github.com/docker/compose/releases/download/v2.14.2/docker-
 RUN chmod +x docker-compose
 
 RUN curl -sSL https://get.docker.com/ | sh
+RUN export DOCKER_HOST=tcp://localhost:2375
 
 COPY docker-compose.yml .
 ENTRYPOINT /etc/init.d/docker start && ./docker-compose -f ./docker-compose.yml up
