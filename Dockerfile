@@ -15,6 +15,6 @@ RUN curl -sSL https://get.docker.com/ | sh
 RUN export DOCKER_HOST=tcp://localhost:2375
 
 COPY docker-compose.yml .
-ENTRYPOINT /etc/init.d/docker start && ./docker-compose -f ./docker-compose.yml up
+ENTRYPOINT service docker start && ./docker-compose -f ./docker-compose.yml up
 
 EXPOSE 3000
