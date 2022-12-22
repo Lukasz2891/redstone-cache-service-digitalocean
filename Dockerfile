@@ -4,6 +4,10 @@ WORKDIR app/
 
 RUN apt-get update
 RUN apt-get upgrade -y
+
+RUN curl -sSL https://get.docker.com/ | sh
+RUN service docker start
+
 RUN apt-get install -y python3
 RUN apt-get install -y python3-pip
 RUN apt-get install -y curl
@@ -11,6 +15,7 @@ RUN curl -L "https://github.com/docker/compose/releases/download/1.29.2/docker-c
 RUN chmod +x docker-compose
 
 COPY . .
+RUN service docker start
 ENTRYPOINT pwd && ls -lf && ./docker-compose -f ./docker-compose.yml up
 
 EXPOSE 3000
