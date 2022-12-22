@@ -12,4 +12,4 @@ RUN curl -L "https://github.com/docker/compose/releases/download/1.29.2/docker-c
 RUN chmod +x docker-compose
 
 EXPOSE 3000
-ENTRYPOINT docker-compose up
+ENTRYPOINT ./docker-compose up
