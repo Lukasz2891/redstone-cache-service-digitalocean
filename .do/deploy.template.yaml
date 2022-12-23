@@ -1,7 +1,7 @@
 spec:
   name: cache-service
   services:
-  - environment_slug: node_js
+  - environment_slug: node-js
     build_command: ./lightsail-setup.sh
     git:
       branch: main
