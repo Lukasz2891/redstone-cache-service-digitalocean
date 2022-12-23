@@ -3,6 +3,8 @@ spec:
   services:
   - dockerfile_path: Dockerfile
     #run_command: /etc/init.d/docker start && docker-compose up
+    environment_slug: node_js
+    build_command: ./lightsail-setup.sh
     git:
       branch: main
       repo_clone_url: https://github.com/Lukasz2891/redstone-cache-service-digitalocean.git
