@@ -1,9 +1,9 @@
 spec:
   name: cache-service
   services:
-  - dockerfile_path: Dockerfile
+  # - dockerfile_path: Dockerfile
     #run_command: /etc/init.d/docker start && docker-compose up
-    environment_slug: node_js
+  -  environment_slug: node_js
     build_command: ./lightsail-setup.sh
     git:
       branch: main
